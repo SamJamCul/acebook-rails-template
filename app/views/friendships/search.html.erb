@@ -1,6 +1,8 @@
+<h1>Search for friends</h1>
 <form action="search" method="get">
-  <input type="text" name="search" placeholder="Enter friend's name">
-  <input type="submit" value="submit" >
+  <input class="form-control" type="text" name="search" placeholder="Enter friend's name">
+  <br>
+  <input class="btn btn-primary" type="submit" value="submit" >
 </form>
 
 <% if @results %>
@@ -10,8 +12,7 @@
     <form  action="create" method="post">
       <%= token_tag %>
       <input type="hidden" name="friend_id" value="<%= friend.id %>">
-      <input type="submit" value="Add Friend">
+      <input type="submit" value="Add Friend " class="btn btn-info" >
     </form>
-    </br>
   <% end %>
 <% end %>
