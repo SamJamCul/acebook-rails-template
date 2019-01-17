@@ -238,6 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actioncable
   bootstrap (~> 4.0.0)
   byebug
   capybara (~> 2.13)
