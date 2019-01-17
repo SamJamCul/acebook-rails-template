@@ -5,14 +5,22 @@
   <input class="btn btn-primary" type="submit" value="submit" >
 </form>
 
+<br>
+
 <% if @results %>
-  <% @results.each do |friend| %>
-    <hr>
-    <%= "#{friend.firstname} #{friend.lastname}" %>
-    <form  action="create" method="post">
-      <%= token_tag %>
-      <input type="hidden" name="friend_id" value="<%= friend.id %>">
-      <input type="submit" value="Add Friend " class="btn btn-info" >
-    </form>
-  <% end %>
+  <div class="card-columns">
+    <% @results.each do |friend| %>
+        <div class="card col-5">
+          <div class="card-body">
+            <%= image_tag friend.avatar.url, size:"50x50", class: "mr-2 rounded-circle center"%>
+              <%= "#{friend.firstname} #{friend.lastname}" %>
+              <form id="addFriend"  action="create" method="post">
+                <%= token_tag %>
+                <input type="hidden" name="friend_id" value="<%= friend.id %>">
+               </form>
+          </div>
+          <input form="addFriend" type="submit" value="Add Friend " class="btn btn-info mb-3" >
+        </div>
+    <% end %>
+  </div>
 <% end %>
