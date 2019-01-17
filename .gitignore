@@ -29,3 +29,6 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignore test coverage results
+coverage/*
